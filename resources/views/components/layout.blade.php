@@ -167,10 +167,9 @@
             <!-- Sidebar content -->
             <div class="p-4">
                 <!-- Sidebar items -->
-                <a href=""
+                <a href="{{ route('admin.dash') }}"
                     class="block text-center py-2 px-4 hover:bg-gray-700 {{ Request::is('/') ? 'bg-gray-700' : '' }} ">Dashboard</a>
-                <a href=""
-                    class="block text-center py-2 px-4 hover:bg-gray-700  {{ Request::is('pros') ? 'bg-gray-700' : '' }}">Products</a>
+
                 {{-- <a href="{{ route('admin.addPro') }}"
                     class="block text-center py-2 px-4 hover:bg-gray-700 {{ Request::is('addPro') ? 'bg-gray-700' : '' }} ">Add
                     Product</a> --}}
@@ -179,6 +178,9 @@
                     Section</a>
                 <a href="{{ route('leads') }}"
                     class="block text-center py-2 px-4 hover:bg-gray-700  {{ Request::is('leads') ? 'bg-gray-700' : '' }}">Leads
+                    Section</a>
+                <a href="{{ route('careers') }}"
+                    class="block text-center py-2 px-4 hover:bg-gray-700  {{ Request::is('careers') ? 'bg-gray-700' : '' }}">Career
                     Section</a>
 
             </div>
