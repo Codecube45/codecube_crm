@@ -16,12 +16,13 @@
             <div class="input_container flex space-x-4">
                 <div class="flex-1 ">
                     <label for="company" class="block float-left text-lg mb-2">Title</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-                        value="" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="user_id"
+                        value="{{ auth()->user()->id }}" hidden />
                 </div>
                 <div class="flex-1">
                     <label for="company" class="block float-left text-lg mb-2">Category</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="topic" />
                 </div>
             </div>
 
@@ -45,7 +46,7 @@
                     Add
                 </button>
 
-                <a href="" class="text-black ml-4"> Back </a>
+                <a href="/dashboard" class="text-black ml-4"> Back </a>
             </div>
         </form>
 

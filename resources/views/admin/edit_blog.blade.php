@@ -6,7 +6,7 @@
             {{-- <p class="mb-4">Edit:</p> --}}
         </header>
 
-        <form method="POST" class="w-4/5 mx-auto" action="{{ route('blog.store') }}" enctype="multipart/form-data">
+        <form method="POST" class="w-4/5 mx-auto" action="{{ route('blog.update') }}" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <div class="mb-6">
@@ -18,12 +18,14 @@
                 <div class="flex-1 ">
                     <label for="company" class="block float-left text-lg mb-2">Title</label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-                        value="{{ $item->id }}" />
+                        value="{{ $item->title }}" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="user_id"
+                        value="{{ auth()->user()->id }}" hidden />
                 </div>
                 <div class="flex-1">
                     <label for="company" class="block float-left text-lg mb-2">Category</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="category"
-                        value="{{ $item->id }}" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="topic"
+                        value="{{ $item->topic }}" />
                 </div>
             </div>
 
@@ -44,10 +46,9 @@
             </div>
             <div class="mb-6">
                 <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                    Add
+                    Edit
                 </button>
-
-                <a href="" class="text-black ml-4"> Back </a>
+                <a href="/dashboard" class="text-black ml-4"> Back </a>
             </div>
         </form>
 
